@@ -1,0 +1,32 @@
+0
+0	7	3	0	0	7	5	9	Biomedical Library	CLICC Lab	College Library	East Asian Library	Management Library	Research Library	Science and Engineering Library
+0	8	0	0	1	4	5	9	Arts Library	Biomedical Library	CLICC Lab	College Library	East Asian Library	Geology Library	Law Library	Management Library	Music Library	Research Library	Science and Engineering Library	UCLA Lab School Library
+1	5	0	0	1	9	5	9	Arts Library	Biomedical Library	CLICC Lab	College Library	East Asian Library	Geology Library	Law Library	Management Library	Music Library	Research Library	Science and Engineering Library
+2	0	0	0	2	1	5	9	Biomedical Library      CLICC Lab       College Library East Asian Library      Geology Library	Law Library     Management Library      Research Library        Science and Engineering Library
+2	2	0	0	2	2	5	9	Biomedical Library	CLICC Lab	College Library	East Asian Library	Law Library	Management Library	Research Library	Science and Engineering Library
+2	3	0	0	2	3	2	9	CLICC Lab	Night Powell	Law Library
+2	3	3	0	0	7	2	9	CLICC Lab	Night Powell
+1
+0	0	0	0	0	7	2	9	CLICC Lab	Night Powell
+0	7	3	0	0	7	5	9	Biomedical Library	CLICC Lab	College Library	East Asian Library	Management Library	Research Library	Science and Engineering Library
+0	8	0	0	1	4	5	9	Arts Library	Biomedical Library	CLICC Lab	College Library	East Asian Library	Geology Library	Law Library	Management Library	Music Library	Research Library	Science and Engineering Library	UCLA Lab School Library
+1	5	0	0	1	6	5	9	Arts Library	Biomedical Library	CLICC Lab	College Library	East Asian Library	Geology Library	Law Library	Management Library	Music Library	Research Library	Science and Engineering Library
+1	7	0	0	1	7	5	9	Biomedical Library	CLICC Lab	College Library	East Asian Library	Law Library	Management Library	Research Library	Science and Engineering Library
+1	8	0	0	1	9	5	9	CLICC Lab	Night Powell	Law Library	Management Library
+2	0	0	0	2	0	2	9	CLICC Lab	Night Powell	Law Library
+2	0	3	0	2	2	5	9	CLICC Lab	Night Powell
+2	3	0	0	2	3	5	9
+2
+0	0	0	0	0	8	5	9
+0	9	0	0	1	2	5	9	Arts Library	Biomedical Library	CLICC Lab	College Library	East Asian Library	Law Library	Management Library	Music Library	Research Library	Science and Engineering Library
+1	3	0	0	1	6	5	9	Arts Library    Biomedical Library      CLICC Lab       College Library East Asian Library      Geology Library	Law Library     Management Library      Music Library   Research Library        Science and Engineering Library
+1	7	0	0	1	8	5	9	Law Library	Management Library
+1	9	0	0	2	0	2	9	Law Library
+2	0	3	0	2	3	5	9
+3
+0	0	0	0	1	2	5	9
+1	3	0	0	1	6	5	9	Arts Library	Biomedical Library	CLICC Lab	College Library	East Asian Library	Geology Library	Law Library	Management Library	Music Library	Research Library	Science and Engineering Library
+1	7	0	0	2	1	5	9	Biomedical Library	CLICC Lab	College Library	East Asian Library	Geology Library	Law Library	Management Library	Research Library	Science and Engineering Library
+2	2	0	0	2	2	5	9	CLICC Lab	Night Powell	Law Library	Management Library
+2	3	0	0	2	3	2	9	CLICC Lab	Night Powell	Law Library
+2	3	3	0	2	3	5	9	CLICC Lab	Night Powell
