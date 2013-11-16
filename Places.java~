@@ -11,14 +11,10 @@ public class Places
 	public Block [] Friday;
 	public Block [] Saturday;
 	public Block [] Sunday;
-	//0 if restaurant, 1 if libraries
-	public int type;
 	
 	//Name1 is the Name to the array of string, Name2 is the name indexed data
-	//for the type, enter 0 if restaurant and 1 if library
-	public Places(Context context, String Name1, String Name2, int type)
+	public Places(Context context, String Name1, String Name2)
 	{
-		this.type=type;
 		File textfile=context.getFilesDir()+"/"+Name1;
 		BufferedReader in=null;
 		try
@@ -164,10 +160,10 @@ public class Places
 				{
 					for(int j=0; j<MonThurs[i].size; j++)
 					{
-						list.add(place[(MonThurs[i].openPlaces[j])-1]);
+						list.add(place[MonThurs[i].openPlaces[j]]);
 					}
 				}
-				break;
+				
 			}
 		}
 		else if(week==6)
@@ -179,10 +175,10 @@ public class Places
 				{
 					for(int j=0; j<Friday[i].size; j++)
 					{
-						list.add(place[(Friday[i].openPlaces[j])-1]);
+						list.add(place[Friday[i].openPlaces[j]]);
 					}
 				}
-				break;
+				
 			}
 		}
 		else if(week==7)
@@ -194,10 +190,10 @@ public class Places
 				{
 					for(int j=0; j<Saturday[i].size; j++)
 					{
-						list.add(place[(Saturday[i].openPlaces[j])-1]);
+						list.add(place[Saturday[i].openPlaces[j]]);
 					}
 				}
-				break;
+				
 			}
 		}
 		else
@@ -209,10 +205,10 @@ public class Places
 				{
 					for(int j=0; j<Sunday[i].size; j++)
 					{
-						list.add(place[(Sunday[i].openPlaces[j])-1]);
+						list.add(place[Sunday[i].openPlaces[j]]);
 					}
 				}
-				break;
+				
 			}
 		}
 		return list;
