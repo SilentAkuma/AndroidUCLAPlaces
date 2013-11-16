@@ -1,7 +1,7 @@
 public class Time
 {
-	private int hours;
-	private int minutes;
+	public int hours;
+	public int minutes;
 	
 	public Time (int hours, int minutes)
 	{
@@ -10,7 +10,7 @@ public class Time
 	}
 	
 	//returns -1 if time1 is earlier than time2, 1 if time1 is later than time 2, and 0 if they are the same time
-	public int compare (Time time1, Time time2)
+	public static int compare (Time time1, Time time2)
 	{
 		if(time1.hours<time2.hours)
 			return -1;

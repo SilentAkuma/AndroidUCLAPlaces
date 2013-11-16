@@ -2,17 +2,18 @@ import java.io.*;
 import java.text.*;
 import java.util.ArrayList;
 import java.util.Calendar;
+import android.*;
 
 public class Places
 {
-	public string[] place;
+	public String[] place;
 	public Block [] MonThurs;
 	public Block [] Friday;
 	public Block [] Saturday;
 	public Block [] Sunday;
 	
 	//Name1 is the Name to the array of string, Name2 is the name indexed data
-	public Places(String Name1, String Name2)
+	public Places(Context context, String Name1, String Name2)
 	{
 		File textfile=context.getFilesDir()+"/"+Name1;
 		BufferedReader in=null;
@@ -21,8 +22,8 @@ public class Places
 			in=new BufferedReader(new InputStreamReader(context.openFileInput(Name1, Context.MODE_PRIVATE)));
 			String line= in.readLine();
 			String [] temp=line.split("\t");
-			place=new String [temp[0]);
-			for(int k=0; k<temp[0]; k++)
+			place=new String [Integer.parseInt(temp[0])];
+			for(int k=0; k<Integer.parseInt(temp[0]); k++)
 			{
 				place[k]=temp[k+1];
 			}
@@ -64,8 +65,8 @@ public class Places
 				int size2=Integer.parseInt(temp[4]);
 				int [] temp2= new int[size2];
 				for (int j=0; j<size2; j++)
-					temp2[j]=temp[j+5];
-				MonThur[i]=new Block(startHours, startMinutes, endHours, endMinutes, size2, temp2);
+					temp2[j]=Integer.parseInt(temp[j+5]);
+				MonThurs[i]=new Block(startHours, startMinutes, endHours, endMinutes, size2, temp2);
 			}
 			
 			line=in.readLine();
@@ -82,7 +83,7 @@ public class Places
 				int size2=Integer.parseInt(temp[4]);
 				int [] temp2= new int[size2];
 				for (int j=0; j<size2; j++)
-					temp2[j]=temp[j+5];
+					temp2[j]=Integer.parseInt(temp[j+5]);
 				Friday[i]=new Block(startHours, startMinutes, endHours, endMinutes, size2, temp2);
 			}
 			
@@ -100,7 +101,7 @@ public class Places
 				int size2=Integer.parseInt(temp[4]);
 				int [] temp2= new int[size2];
 				for (int j=0; j<size2; j++)
-					temp2[j]=temp[j+5];
+					temp2[j]=Integer.parseInt(temp[j+5]);
 				Saturday[i]=new Block(startHours, startMinutes, endHours, endMinutes, size2, temp2);
 			}
 			
@@ -118,7 +119,7 @@ public class Places
 				int size2=Integer.parseInt(temp[4]);
 				int [] temp2= new int[size2];
 				for (int j=0; j<size2; j++)
-					temp2[j]=temp[j+5];
+					temp2[j]=Integer.parseInt(temp[j+5]);
 				Sunday[i]=new Block(startHours, startMinutes, endHours, endMinutes, size2, temp2);
 			}
 		}
@@ -150,46 +151,46 @@ public class Places
 		int minute=c.get(Calendar.MINUTE);
 		Time time= new Time (hour, minute);
 		ArrayList<String> list=new ArrayList <String> (0);
-		if(week=2||week=3||week=4||week=4)
+		if(week==2||week==3||week==4||week==5)
 		{
-			int length=MonThurs.size();
+			int length=MonThurs.length;
 			for (int i=0; i<length; i++)
 			{
-				if(Time.compare (time, Block.end)<0)
+				if(Time.compare (time, MonThurs[i].end)<0)
 				{
-					for(int j=0; j<Block.size; j++)
+					for(int j=0; j<MonThurs[i].size; j++)
 					{
-						list.add(place[openPlace[j]]);
+						list.add(place[MonThurs[i].openPlaces[j]]);
 					}
 				}
 				
 			}
 		}
-		else if(week=5)
+		else if(week==6)
 		{
-			int length=Friday.size();
+			int length=Friday.length;
 			for (int i=0; i<length; i++)
 			{
-				if(Time.compare (time, Block.end)<0)
+				if(Time.compare (time, Friday[i].end)<0)
 				{
-					for(int j=0; j<Block.size; j++)
+					for(int j=0; j<Friday[i].size; j++)
 					{
-						list.add(place[openPlace[j]]);
+						list.add(place[Friday[i].openPlaces[j]]);
 					}
 				}
 				
 			}
 		}
-		else if(week=6)
+		else if(week==7)
 		{
-			int length=Saturday.size();
+			int length=Saturday.length;
 			for (int i=0; i<length; i++)
 			{
-				if(Time.compare (time, Block.end)<0)
+				if(Time.compare (time, Saturday[i].end)<0)
 				{
-					for(int j=0; j<Block.size; j++)
+					for(int j=0; j<Saturday[i].size; j++)
 					{
-						list.add(place[openPlace[j]]);
+						list.add(place[Saturday[i].openPlaces[j]]);
 					}
 				}
 				
@@ -197,14 +198,14 @@ public class Places
 		}
 		else
 		{
-			int length=Sunday.size();
+			int length=Sunday.length;
 			for (int i=0; i<length; i++)
 			{
-				if(Time.compare (time, Block.end)<0)
+				if(Time.compare (time, Sunday[i].end)<0)
 				{
-					for(int j=0; j<Block.size; j++)
+					for(int j=0; j<Sunday[i].size; j++)
 					{
-						list.add(place[openPlace[j]]);
+						list.add(place[Sunday[i].openPlaces[j]]);
 					}
 				}
 				
