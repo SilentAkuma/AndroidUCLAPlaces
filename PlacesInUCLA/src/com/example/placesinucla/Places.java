@@ -1,7 +1,6 @@
 package com.example.placesinucla;
 
 import java.io.*;
-import java.text.*;
 import java.util.ArrayList;
 import java.util.Calendar;
 import android.content.Context;
@@ -18,15 +17,15 @@ public class Places
 	
 	//Name1 is the Name to the array of string, Name2 is the name indexed data
 	//for the type, enter 0 if restaurant and 1 if library
-	public Places(Context context, String Name1, String Name2, int type)
+	public Places(Context c, String Name1, String Name2, int type)
 	{
 		this.type=type;
-		File textfile=new File(context.getFilesDir()+"/"+Name1);
+		//File textfile=new File(context.getFilesDir()+"/"+Name1);
 		BufferedReader in=null;
 		try
 		{
 			//in=new BufferedReader(new InputStreamReader(context.openFileInput(Name1, Context.MODE_PRIVATE)));
-			in=new BufferedReader(new InputStreamReader(new FileInputStream(textfile)));
+			in=new BufferedReader(new InputStreamReader(c.getAssets().open(Name1)));
 			String line= in.readLine();
 			String [] temp=line.split("\t");
 			place=new String [Integer.parseInt(temp[0])];
@@ -54,11 +53,11 @@ public class Places
 			}	
 		}
 		
-		textfile=new File(context.getFilesDir()+"/"+Name2);
+		//textfile=new File(context.getFilesDir()+"/"+Name2);
 		try
 		{
 			//in=new BufferedReader(new InputStreamReader(context.openFileInput(Name1, Context.MODE_PRIVATE)));
-			in=new BufferedReader(new InputStreamReader(new FileInputStream(textfile)));
+			in=new BufferedReader(new InputStreamReader(c.getAssets().open(Name2)));
 			String line=in.readLine();
 			int size1=Integer.parseInt(line);
 			MonThurs=new Block [size1];
@@ -170,8 +169,8 @@ public class Places
 					{
 						list.add(place[(MonThurs[i].openPlaces[j])-1]);
 					}
+					break;
 				}
-				break;
 			}
 		}
 		else if(week==6)
@@ -185,8 +184,8 @@ public class Places
 					{
 						list.add(place[(Friday[i].openPlaces[j])-1]);
 					}
+					break;
 				}
-				break;
 			}
 		}
 		else if(week==7)
@@ -200,8 +199,8 @@ public class Places
 					{
 						list.add(place[(Saturday[i].openPlaces[j])-1]);
 					}
+					break;
 				}
-				break;
 			}
 		}
 		else
@@ -215,8 +214,8 @@ public class Places
 					{
 						list.add(place[(Sunday[i].openPlaces[j])-1]);
 					}
+					break;
 				}
-				break;
 			}
 		}
 		return list;
