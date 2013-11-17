@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="200dp"
+        android:layout_marginTop="0dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="22dp"
+            android:text="@string/library_tittle"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="22sp" />
+
+        <CheckBox
+            android:id="@+id/checkBox_availableLibraryOnly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/textView1"
+            android:layout_toRightOf="@+id/textView1"
+            android:onClick="onCheckboxClicked"
+            android:text="@string/availableOnly"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+     <LinearLayout
+        android:id="@+id/LinearLayout_library_list"
+        android:layout_width="match_parent"
+        android:layout_marginTop="200dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+    </LinearLayout>
+
+</LinearLayout>
+
