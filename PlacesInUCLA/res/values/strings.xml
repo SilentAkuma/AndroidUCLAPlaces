@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">PlacesInUCLA</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="libraries">Libraries</string>
+    <string name="restaurants">Restaurants</string>
+    <string name="text_tittle">What are you looking for?</string>
+    <string name="library_tittle">Libraries in UCLA</string>
+    <string name="restaurants_tittle">Restaurants in UCLA</string>
+    <string name="availableOnly">Available Only</string>
+    <string name="title_activity_libraries">Libraries</string>
+    <string name="title_activity_restaurants">Restaurants</string>
+
+</resources>
