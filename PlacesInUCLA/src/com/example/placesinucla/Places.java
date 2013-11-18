@@ -12,14 +12,11 @@ public class Places
 	public Block [] Friday;
 	public Block [] Saturday;
 	public Block [] Sunday;
-	//0 if restaurant, 1 if libraries
-	public int type;
 	
 	//Name1 is the Name to the array of string, Name2 is the name indexed data
 	//for the type, enter 0 if restaurant and 1 if library
-	public Places(Context c, String Name1, String Name2, int type)
+	public Places(Context c, String Name1, String Name2)
 	{
-		this.type=type;
 		//File textfile=new File(context.getFilesDir()+"/"+Name1);
 		BufferedReader in=null;
 		try
