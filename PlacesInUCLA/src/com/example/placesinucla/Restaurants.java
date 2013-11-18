@@ -1,5 +1,7 @@
 package com.example.placesinucla;
 
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
@@ -7,8 +9,10 @@ import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 public class Restaurants extends Activity {
@@ -18,9 +22,11 @@ public class Restaurants extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setShowAll(true);
-		setContentView(R.layout.activity_restaurants);
+		// setShowAll(true);
+		// setContentView(R.layout.activity_restaurants);
 
+		updateList();
+		
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB)
 			setupActionBar();
 
@@ -33,13 +39,33 @@ public class Restaurants extends Activity {
 		// TODO: modify this function to add all the data
 
 		// e.g
-		addContent("College Library", "All day");
-		if (showAll)
-			addContent("Research Library", "8am-8pm");
+		ArrayList<String> restaurants = Retrieve.getRestaurant(this);
 
+		ScrollView sv = new ScrollView(this);
+		LinearLayout ll = new LinearLayout(this);
+		ll.setOrientation(LinearLayout.VERTICAL);
+		sv.addView(ll);
+
+		TextView tv = new TextView(this);
+		tv.setTextSize(30);
+		tv.setText("     OPEN RESTAURANTS");
+		ll.setBackgroundResource(R.drawable.bg);
+		ll.addView(tv);
+
+		for (int i = 0; i < restaurants.size(); i++) {
+			Button b = new Button(this);
+			b.setText(restaurants.get(i));
+			ll.addView(b);
+		}
+
+		this.setContentView(sv);
+		/*
+		 * addContent("College Library", "All day"); if (showAll)
+		 * addContent("Research Library", "8am-8pm");
+		 */
 	}
 
-	private void addContent(String name, String hours) {
+	/*private void addContent(String name, String hours) {
 		TextView textViewName = new TextView(this);
 		textViewName.setTextSize(15);
 		textViewName.setText(name);
@@ -56,7 +82,7 @@ public class Restaurants extends Activity {
 		A.addView(textViewName);
 		A.addView(textViewHours);
 		my_root.addView(A);
-	}
+	}*/
 
 	/**
 	 * Set up the {@link android.app.ActionBar}.
